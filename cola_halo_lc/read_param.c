@@ -266,6 +266,7 @@ int read_parameter_file(const char filename[], Parameters* const param)
 
   param->de_w = -1.;
   param->omega_l=-1.;
+  param->only_output_1eighth=0;
   param->use_solve_growth=0;
 
   while(fgets(buf, 1023, fp)) {
@@ -286,6 +287,8 @@ int read_parameter_file(const char filename[], Parameters* const param)
       param->a_final= get_double(p);
     else if(strcmp(name, "ntimestep") == 0)
       param->ntimestep= get_int(p);
+    else if(strcmp(name, "only_output_1eighth") == 0)
+      param->only_output_1eighth= get_int(p);
     else if(strcmp(name, "output_redshifts") == 0)
       param->zout= get_numarray(p, &param->n_zout);
     else if(strcmp(name, "random_seed") == 0)
@@ -348,6 +351,12 @@ int read_parameter_file(const char filename[], Parameters* const param)
      printf("Set omega_l as 1-omega_m... %g\n", param->omega_l);
   }
   printf("Get de_w = %lg\n", param->de_w);
+  printf("Get only_output_1eighth = %d\n", param->only_output_1eighth);
+  if(param->only_output_1eighth){
+        printf("WARNING (read_parameter_file) Will only output 1/8 of the full sky!!!\n");
+        printf("WARNING (read_parameter_file) Will only output 1/8 of the full sky!!!\n");
+        printf("WARNING (read_parameter_file) Will only output 1/8 of the full sky!!!\n");
+  }
 
   return 0;
 }

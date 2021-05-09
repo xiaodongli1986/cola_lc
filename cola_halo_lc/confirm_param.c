@@ -48,6 +48,7 @@ void confirm_parameters(Parameters* const param, const char filename[])
   else
     msg_printf(normal, "omega_m = %lg\n", param->omega_m);
 
+
   if(param->h <= 0.0)
     msg_abort(11006, "h is not given in the parameter file");
   else

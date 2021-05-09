@@ -19,6 +19,8 @@ typedef struct {
   double omega_m, sigma8, h;
   double omega_l, de_w; // xiaodong add: omegal,  dark energy EoS
 
+  int only_output_1eighth; // xiaodong add; if set as 1, only output 1/8 of the sky
+
   double* zout; int n_zout;
 
   /*

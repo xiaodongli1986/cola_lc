@@ -151,7 +151,7 @@ int main(int argc, char* argv[])
   const double sigma8= param.sigma8;
 
   // xiaodong: variables for lightcone output
-  int only_output_1eighth = 0;
+  int only_output_1eighth = param.only_output_1eighth;
   double zmax, rmax=0.;
   int nshift=0, shift1, shift2;
 
